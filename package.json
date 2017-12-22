@@ -12,6 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/JeeDay/cordova-plugin-passopener.git"
   },
+  "types": "./types/index.d.ts",
   "keywords": [
     "ecosystem:cordova",
     "cordova-ios"
