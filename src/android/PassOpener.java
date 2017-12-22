@@ -34,7 +34,7 @@ public class PassOpener extends CordovaPlugin {
         return false;
     }
 
-    private void openPass(uri, callbackContext) {
+    private void openPass(String uri, CallbackContext callbackContext) {
         PassAppAvailabilityChecker passAppChecker = new PassAppAvailabilityChecker();
         if(passAppChecker.checkAvailabilityOfApplications()) {
             callbackContext.success();
@@ -44,7 +44,7 @@ public class PassOpener extends CordovaPlugin {
         }
     }
 
-    private void available(callbackContext) {
+    private void available(CallbackContext callbackContext) {
         PassAppAvailabilityChecker passAppChecker = new PassAppAvailabilityChecker();
         if(passAppChecker.checkAvailabilityOfApplications()) {
             callbackContext.success(true);
@@ -54,7 +54,7 @@ public class PassOpener extends CordovaPlugin {
         }
     }
 
-    private void downloadPass(uri, callbackContext) {
+    private void downloadPass(String uri, CallbackContext callbackContext) {
         PassAppAvailabilityChecker passAppChecker = new PassAppAvailabilityChecker();
         if(passAppChecker.checkAvailabilityOfApplications()) {
             callbackContext.success();
@@ -64,7 +64,7 @@ public class PassOpener extends CordovaPlugin {
         }
     }
 
-    private void addPass(uri, callbackContext) {
+    private void addPass(String uri, CallbackContext callbackContext) {
         PassAppAvailabilityChecker passAppChecker = new PassAppAvailabilityChecker();
         if(passAppChecker.checkAvailabilityOfApplications()) {
             callbackContext.success();
