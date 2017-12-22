@@ -103,14 +103,14 @@ public class PassOpener extends CordovaPlugin {
 
     private String[] getDefaultListOfPassApplications() {
         return new String[] {
-            'io.walletpasses.android',
-            'org.ligi.passandroid',
-            'com.attidomobile.passwallet',
-            'com.passesalliance.wallet',
-            'com.walletunion.wallet',
-            'com.pbook.passwallet',
-            'com.passkit.android',
-            'es.claucookie.pasbuk'
+            "io.walletpasses.android",
+            "org.ligi.passandroid",
+            "com.attidomobile.passwallet",
+            "com.passesalliance.wallet",
+            "com.walletunion.wallet",
+            "com.pbook.passwallet",
+            "com.passkit.android",
+            "es.claucookie.pasbuk"
         };
     }
 
