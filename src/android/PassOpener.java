@@ -46,10 +46,10 @@ public class PassOpener extends CordovaPlugin {
 
     private void available(CallbackContext callbackContext) {
         if(checkAvailabilityOfApplications()) {
-            callbackContext.success(true);
+            callbackContext.success();
         }
         else {
-            callbackContext.success(false);
+            callbackContext.error("");
         }
     }
 
