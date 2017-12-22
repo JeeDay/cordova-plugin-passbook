@@ -79,7 +79,7 @@ public class PassOpener extends CordovaPlugin {
         boolean[] availabilities = {};
         boolean isExist = false;
         for(int item=0; item < uris.length; item++) {
-           availabilities = append(availabilities, this.appInstalled(uris[item]));
+           availabilities = availabilities.append(this.appInstalled(uris[item]));
         }
 
         // If compatible applications are found for Android
