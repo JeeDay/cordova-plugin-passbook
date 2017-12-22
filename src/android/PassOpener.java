@@ -9,7 +9,7 @@ import android.content.Context;
 import android.content.pm.PackageManager;
 import com.jeeday.passopener.PassAppAvailabilityChecker;
 
-public class Passbook extends CordovaPlugin {
+public class PassOpener extends CordovaPlugin {
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         if(action.equals("openPass")) {

@@ -1,10 +1,10 @@
-#import "CDVPassbook.h"
+#import "CDVPassOpener.h"
 #import <Cordova/CDV.h>
 #import <PassKit/PassKit.h>
 
 typedef void (^AddPassResultBlock)(PKPass *pass, BOOL added);
 
-@interface CDVPassbook()<PKAddPassesViewControllerDelegate>
+@interface CDVPassOpener()<PKAddPassesViewControllerDelegate>
 
 @property (nonatomic, retain) PKPass *lastPass;
 @property (nonatomic, copy) AddPassResultBlock lastAddPassCallback;
@@ -21,7 +21,7 @@ typedef void (^AddPassResultBlock)(PKPass *pass, BOOL added);
 
 @end
 
-@implementation CDVPassbook
+@implementation CDVPassOpener
 
 @synthesize lastPass;
 @synthesize lastAddPassCallback;
@@ -47,7 +47,7 @@ typedef void (^AddPassResultBlock)(PKPass *pass, BOOL added);
 
 - (void)available:(CDVInvokedUrlCommand*)command
 {
-    CDVPluginResult *commandResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:[CDVPassbook available]];
+    CDVPluginResult *commandResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:[CDVPassOpener available]];
     [self.commandDelegate sendPluginResult:commandResult callbackId:command.callbackId];
 }
 
@@ -155,7 +155,7 @@ typedef void (^AddPassResultBlock)(PKPass *pass, BOOL added);
 
 - (BOOL)ensureAvailability:(CDVInvokedUrlCommand*)command
 {
-    if(![CDVPassbook available]) {
+    if(![CDVPassOpener available]) {
         CDVPluginResult *commandResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_INVALID_ACTION messageAsString:@"Passbook is not available on this device"];
         [self.commandDelegate sendPluginResult:commandResult callbackId:command.callbackId];
         return NO;

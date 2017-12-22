@@ -1,6 +1,6 @@
 #import <Cordova/CDVPlugin.h>
 
-@interface CDVPassbook : CDVPlugin
+@interface CDVPassOpener : CDVPlugin
 
 - (void)available:(CDVInvokedUrlCommand*)command;
 - (void)downloadPass:(CDVInvokedUrlCommand*)command;

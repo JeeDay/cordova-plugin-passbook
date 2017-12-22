@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-           id="cordova-plugin-passbook"
+           id="cordova-plugin-passopener"
       version="0.2.1">
 
-    <name>Passbook</name>
-    <description>This plugin allows you to add passes to Passbook</description>
-    <author>PassSlot.com</author>
+    <name>PassOpener</name>
+    <description>This plugin allows you to add passes to Your favorite pass application</description>
+    <author>Jeeday</author>
     <license>Apache 2.0</license>
     <engines>
         <engine name="cordova" version=">=3.0.0" />
@@ -16,20 +16,31 @@
     <platform name="ios">
 
         <config-file target="config.xml" parent="/*">
-            <feature name="Passbook">
-                <param name="ios-package" value="CDVPassbook"/>
+            <feature name="PassOpener">
+                <param name="ios-package" value="CDVPassOpener"/>
             </feature>
         </config-file>
 
-        <js-module src="www/passbook.js" name="passbook">
-            <clobbers target="Passbook" />
+        <js-module src="www/passopener.js" name="passopener">
+            <clobbers target="PassOpener" />
         </js-module>
 
-        <header-file src="src/ios/CDVPassbook.h" />
-        <source-file src="src/ios/CDVPassbook.m" />
+        <header-file src="src/ios/CDVPassOpener.h" />
+        <source-file src="src/ios/CDVPassOpener.m" />
     
         <framework src="PassKit.framework" />
 
+    </platform>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Passbook">
+                <param name="android-package" value="com.jeeday.passopener"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/PassOpener.java" target-dir="src/com/jeeday/passopener" />
     </platform>
 
 </plugin>
