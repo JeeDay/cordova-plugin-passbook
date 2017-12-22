@@ -35,7 +35,7 @@
     <!-- android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="Passbook">
+            <feature name="PassOpener">
                 <param name="android-package" value="com.jeeday.passopener"/>
             </feature>
         </config-file>
