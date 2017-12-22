@@ -36,7 +36,7 @@ public class PassOpener extends CordovaPlugin {
     // Pass specific functions
 
     private void openPass(String uri, CallbackContext callbackContext) {
-        if(checkAvailabilityOfApplications()) {
+        if(this.checkAvailabilityOfApplications()) {
             callbackContext.success();
         }
         else {
@@ -45,7 +45,7 @@ public class PassOpener extends CordovaPlugin {
     }
 
     private void available(CallbackContext callbackContext) {
-        if(checkAvailabilityOfApplications()) {
+        if(this.checkAvailabilityOfApplications()) {
             callbackContext.success();
         }
         else {
@@ -54,7 +54,7 @@ public class PassOpener extends CordovaPlugin {
     }
 
     private void downloadPass(String uri, CallbackContext callbackContext) {
-        if(checkAvailabilityOfApplications()) {
+        if(this.checkAvailabilityOfApplications()) {
             callbackContext.success();
         }
         else {
@@ -63,7 +63,7 @@ public class PassOpener extends CordovaPlugin {
     }
 
     private void addPass(String uri, CallbackContext callbackContext) {
-        if(checkAvailabilityOfApplications()) {
+        if(this.checkAvailabilityOfApplications()) {
             callbackContext.success();
         }
         else {
@@ -75,15 +75,15 @@ public class PassOpener extends CordovaPlugin {
     // Availability functions
 
     private void checkAvailabilityOfPassApplications() {
-        String[] uris = getDefaultListOfPassApplications();
+        String[] uris = this.getDefaultListOfPassApplications();
         boolean[] availabilities = {};
         boolean isExist = false;
         for(int item=0; item < uris.length; item++) {
-           availabilities = append(availabilities, appInstalled(uris[item]));
+           availabilities = append(availabilities, this.appInstalled(uris[item]));
         }
 
         // If compatible applications are found for Android
-        return doesContainBoolean(availabilities);
+        return this.doesContainBoolean(availabilities);
     }
 
     // Thanks to http://floresosvaldo.com/android-cordova-plugin-checking-if-an-app-exists
